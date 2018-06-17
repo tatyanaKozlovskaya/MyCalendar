@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+
+    <title>My Calendar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<div id="content"></div>
+<div id="menu" class="header">
+
+</div>
+
+<div id="container">
+    <div class="preloader">
+        <div class="preloader-img"></div>
+    </div>
+</div>
+<div id="to-do-list" class="noneDisplay">
+    <div class="notification is-info"> Извините! ToDoList временно не доступен, ведутся работы.</div>
+    <div class="to-do-list container">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+
+                <nav class="panel">
+                    <p class="panel-heading">
+                        Your To-Do List
+                    </p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                            <input class="input is-small add-task" type="text"
+                                   placeholder="Please press 'Enter' to add new task">
+                            <span class="icon is-small is-left">
+                        <i class="fa fa-tasks"></i>
+                    </span>
+                        </p>
+                    </div>
+                    <p class="panel-tabs">
+                        <a class="all-tag is-active">All</a>
+                        <a class="completed-tag">Completed</a>
+                        <a class="uncompleted-tag">Uncompleted</a>
+                    </p>
+
+                    <div class="panel-block completed-tags">
+                        <span class="tag is-primary">Completed: 0</span>
+                        <span class="tag">Uncompleted: 0</span>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal"></div>
+
+<script data-main="js/build.js" src="js/require.js"></script>
+</body>
+</html>

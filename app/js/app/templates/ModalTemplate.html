@@ -1,0 +1,28 @@
+<div class="modal-card is-primary">
+    <div class="modal-card-head">
+        <p class="modal-card-title"><%= date %></p>
+
+    </div>
+    <section class="modal-card-body">
+        <input class="input" name="" id="eventTask">
+        <div class="field">
+            <label class="label"><%= timeText %></label>
+            <p class="control">
+                <span class="select"> 
+                  <select id="time">
+                   <%  for (var m = 0; m <= 24; m++) { %>
+                   <option value="<%= m %>">
+                   <% if(m < 10){print('0'+ m + ':00')} else {print(m + ':00')} m + ':00' %>
+                   </option>           
+                   <% } %>
+                  </select>
+                </span>
+            </p>
+        </div>
+    </section>
+    <div class="modal-card-foot">
+        <a class="button is-success" id="saveModal"><%= saveText %></a>
+        <a class="button cancel" id="cancelModal"><%= cancelText %></a>
+    </div>
+
+</div>

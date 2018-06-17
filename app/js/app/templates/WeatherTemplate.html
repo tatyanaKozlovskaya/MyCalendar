@@ -1,0 +1,42 @@
+<div class="title is-4"><%= cityName %>
+    <div>
+        <button class="button is-small is-primary threeDaysButton"><%= show3DaysText %></button>
+        <button class="button is-small is-primary oneDayButton"><%= showTodayText %></button>
+    </div>
+</div>
+<table>
+    <tr class="date">
+        <% for(var i = 0; i < dataWeather.length;i++ ){
+        if (i === 3){
+        return
+        } %>
+        <td><%= dataWeather[i].date %></td>
+        <% } %>
+    </tr>
+    <tr class="temperature">
+        <% for(var e = 0; e < dataWeather.length;e++ ){
+        if (e === 3){
+        return
+        } %>
+        <td><%= dataWeather[e].temp %></td>
+        <% } %>
+    </tr>
+    <tr class="iconWeather">
+        <% for(var c = 0; c < dataWeather.length;c++ ){
+        if (c === 3){
+        return
+        } %>
+        <td>
+            <img src="<%= 'http://openweathermap.org/img/w/' + dataWeather[c].icon + '.png' %>">
+        </td>
+        <% } %>
+    </tr>
+    <tr class="desc">
+        <% for(var b = 0; b < dataWeather.length;b++ ){
+        if (b === 3){
+        return
+        } %>
+        <td><%= dataWeather[b].desc %></td>
+        <% } %>
+    </tr>
+</table>

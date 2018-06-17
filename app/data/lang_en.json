@@ -1,0 +1,26 @@
+{
+	"monthNames":"January, February, March, April, May, June, July, August, September, October, November, December",
+	"monthNamesPart":"January, February, March, April, May, June, July, August, September, October, November, December",
+	"dayNames":"Mo,Tu,We,Th,Fr,Sa,Su",
+	"buttonShow":"Show",
+	"buttonClean":"Clean",
+	"modalTitle":"Event on: ",
+	"save":"Ok",
+	"cancel":"Cancel",
+	"lang":"lang-en",
+	"today":"today",
+	"show3days":"Show 3 days",
+    "show1day":"Show today",
+    "timeText":"Time:",
+    "signInText":"Sign in",
+    "signInWithGoogleText":"Sign in with Google",
+    "youNeedAutorisation":"You need to login",
+    "signOut":"Sign Out",
+    "nowYouCan":"Now you can use calendar!",
+    "signUpText":"Sign Up",
+    "cancelText":"Cancel",
+    "yourNameText":"Name:",
+    "yourEmailText":"Email:",
+    "yourPasswordText":"Password:"
+
+}

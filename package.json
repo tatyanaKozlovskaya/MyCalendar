@@ -1,0 +1,22 @@
+{
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "My Project with gulp",
+  "main": "app/js/my.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tatyana Kozlovskaya",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.4.1",
+    "gulp-json-minify": "^1.2.0"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-webserver": "^0.9.1",
+    "requirejs": "^2.3.3"
+  }
+}

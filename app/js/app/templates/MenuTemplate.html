@@ -1,0 +1,133 @@
+<div class="weather">
+</div>
+<section class="buttons-all  <% if(user){ print('buttons-all-user')} %> ">
+
+    <div class="autorisation">
+        <div class="settings-button">
+            <img src="img/menu-image.png" class="settings-button-img">
+        </div>
+
+        <% if(user){
+        if(user.backgrouns){
+        document.body.style.backgroundImage = 'url('+user.backgrounds+')';
+        } else {
+        document.body.style.backgroundImage = 'url(img/Light-Abstract-Wallpapers.jpg)';}%>
+        <div class="user-header-img">
+            <img class="user-img user-img-button" <%
+            if(user.avatar){ %> src="<%= user.avatar.src %>" <% } else if(user.photoURL){ %> src="<%= user.photoURL %>"
+            <% } else { %>
+            src="img/user_pic.jpg" <% } %> >
+        </div>
+        <div class="user-header-name"><% if( user.name){print(user.name)} %></div>
+        <div class="hashes">
+            <a class="button is-primary hash" href="#ToDoList">
+                <span>ToDoList</span>
+            </a>
+            <a class="button is-primary hash" href="#Calendar">
+                <span>Calendar</span>
+            </a>
+        </div>
+
+        <%} else { document.body.style.backgroundImage = 'url(img/Light-Abstract-Wallpapers.jpg)';%>
+
+        <button class="button is-primary sign-google-in">
+            <%= signInWithGoogleText %><i class="fa fa-google" aria-hidden="true"></i>
+        </button>
+        <section class="autentification">
+            <input class="input email" name="" id="eventTask" placeholder="Tatka@mail.ru">
+            <input class="input password" type="password" name="" id="eventTask" placeholder="***********">
+        </section>
+        <button class="button is-primary sign-in">
+            <%= signInText %><i class="fa fa-sign-in" aria-hidden="true"></i>
+        </button>
+        <button class="button is-primary sign-up">
+            <%= signUpText %><i class="fa fa-user-plus" aria-hidden="true"></i>
+        </button>
+        <div class="clear"></div>
+
+        <% } %>
+
+    </div>
+
+    <section class="form-sign-up modal">
+
+
+    </section>
+
+
+    <% if(user){ %>
+    <div class="dateButton">
+        <img src="img/Create-new-calendar.png" class="dateButtonImg">
+    </div>
+    <div class="dateSettings noneDisplay">
+
+        <select id="selectYear">
+            <%for (var y = 2017; y >= 1990; y--) { %>
+            <option><%= y %></option>
+            <% } %>
+        </select>
+        <select id="selectMonth">
+            <% for (var m = 0; m < 12; m++) { %>
+            <option value="<%= m %>"><%= monthNames[m] %></option>
+            <% } %>
+        </select>
+
+        <button id="showNewCalendar" class="button is-primary"><%= showText %></button>
+        <button id="cleanCalendar" class="button is-danger"><%= cleanText %></button>
+        <span class="delete delete-date-settings"></span>
+        <% } %>
+    </div>
+</section>
+<div class="user-class user-settings noneDisplay">
+    <div class="return">
+        <img src="img/return-img.png" class="return-user-settings">
+    </div>
+    <div class="buttons-lang">
+        <button id="lang-ru" class="button is-primary is-inverted lang">Ru</button>
+        <button id="lang-en" class="button is-primary is-inverted lang">En</button>
+    </div>
+    <% if(user){ %>
+    <button class="button background-button is-primary">
+        Фон
+    </button>
+    <% } %>
+</div>
+<% if(user){ %>
+<div class="user-class user-profile noneDisplay">
+    <div class="return">
+        <img src="img/return-img.png" class="return-user-profile">
+    </div>
+    <div class="user-img-container">
+        <img class="user-img" <% if(user.avatar){%> src="<%= user.avatar.src %>" <% } else if(user.photoURL){ %>
+        src="<%= user.photoURL %>" <% } else { %>
+        src="img/user_pic.jpg" <% } %> >
+        <span class="caption-user-photo">Изменить</span>
+    </div>
+    <span class="user-name"><% if( user.name){print(user.name)} %></span>
+    <button class="button is-primary sign-out">
+        <%= signOutText %><i class="fa fa-sign-out" aria-hidden="true"></i></i>
+    </button>
+
+</div>
+
+<div class="user-class user-profile-fotos noneDisplay">
+    <div class="return">
+        <img src="img/return-img.png" class="return-user-profile-fotos">
+    </div>
+    <span>Мои фото:</span>
+    <div class="my-photos"></div>
+
+    <input type="file" class="photos-download">
+</div>
+<div class="user-class user-backgrounds noneDisplay">
+    <div class="return">
+        <img src="img/return-img.png" class="return-user-backgrounds">
+    </div>
+    <span>Мои фоны:</span>
+    <div class="my-backgrounds"></div>
+
+    <input type="file" class="background-download">
+</div>
+<% } %>
+
+<div class="clear"></div>

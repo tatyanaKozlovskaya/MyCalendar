@@ -1,0 +1,65 @@
+<div class="clear"></div>
+
+<div class="autorisation-notification">
+    <% if(user){ %>
+
+    <% } else { %>
+    <div class="notification is-danger need-sign-in">
+        <button class="delete"></button>
+        <%= youNeedAutorisation %>
+    </div>
+    <div class="popup"></div>
+    <% } %>
+</div>
+
+<nav>
+    <button class="button is-primary prev">&lt;</button>
+    <button class="button is-primary next">&gt;</button>
+
+</nav>
+<h2 class="title year-month"><%= dateInHead %></h2>
+<table id="<%= idTable %>" class="table is-bordered">
+    <tr>
+        <%
+        for (var i = 0; i < 7; i++) {
+        %>
+        <th><%= dayNames[i] %></th>
+        <% } %>
+    </tr>
+    <%
+    for (var e = 0; e < Math.ceil((sumDayOfMonth+dayOfWeek)/7); e++) {
+    %>
+    <tr>
+        <%
+        if (e < 1) {
+        for (var a = 0; a < dayOfWeek; a++) {
+        %>
+        <td class="td-empty"></td>
+        <% count++;
+        }
+        for (var c = count; c < 7; c++) { %>
+        <td id="<%= countOfDays+date %>"><%= countOfDays %></td>
+        <% countOfDays++;
+        count++;
+        }
+        } else {
+        for (var b = countOfDays; b < 42; b++) {
+
+        if (countOfDays <= sumDayOfMonth) { %>
+        <td id="<%= countOfDays+date %>"><%= countOfDays %></td>
+        <% countOfDays++;
+        count++;
+        } else { %>
+        <td class="td-empty"></td>
+        <% count++;
+        countOfDays++;
+        }
+        if (count % 7 === 0) { %>
+    </tr>
+    <% break;
+    }
+    }
+    }
+    }%>
+
+</table>

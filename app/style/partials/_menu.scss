@@ -1,0 +1,7 @@
+.nav {
+  background-color: $purple;
+  a {
+    @include fontSize(17px);
+    color: $grey-darker;
+  }
+}
